@@ -10,6 +10,8 @@ getData('https://tanuhaua.github.io/datas-file-json/github_users.json')
       getData(`https://api.github.com/users/${item['githubName']}`)
           .then(gitHubInfoUser => {
             makeLayout(containerForUsers, fullName, gitHubInfoUser['login'], gitHubInfoUser['avatar_url']);
-          });
+          })
+          .catch(console.log);
     });
-  });
+  })
+  .catch(console.log)
